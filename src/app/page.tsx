@@ -42,8 +42,8 @@ function Mark({ className = "" }: { className?: string }) {
           <stop offset="1" stopColor="#A9EBFF" />
         </linearGradient>
       </defs>
+      <path d="M43 18h18l28 64H69L43 18Z" fill="url(#steel)" />
       <path d="M11 82 43 18h18L29 82H11Z" fill="url(#ice)" />
-      <path d="M43 18h18l28 64H69L57 53H42l8-16h15L57 18H43Z" fill="url(#steel)" />
       <path d="M43 61h21l8 18H34l9-18Z" fill="url(#steel)" opacity=".94" />
     </svg>
   );
