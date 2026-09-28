@@ -1,201 +1,85 @@
-const brands = [
-  {
-    name: "AutomatedLO",
-    eyebrow: "Mortgage technology",
-    description:
-      "Purpose-built systems, education, and automation for modern loan officers and mortgage teams.",
-    href: "https://automatedlo.com",
-  },
-  {
-    name: "AutomatedRE",
-    eyebrow: "Real estate technology",
-    description:
-      "Listing marketing, property experiences, and intelligent tools built around the way real estate teams actually work.",
-    href: "https://automatedre.com",
-  },
+import Image from "next/image";
+import { Arrow, BrandLockup } from "@/components/brand";
+import { Navigation } from "@/components/navigation";
+import { Reveal } from "@/components/reveal";
+import { Capabilities } from "@/components/capabilities";
+import { ProjectBrief } from "@/components/project-brief";
+
+const process = [
+  { title: "Find the real problem.", copy: "We look at the people, the workflow, and what is actually getting in the way. The best build starts with the right question.", output: "A clear problem worth solving" },
+  { title: "Design the right first version.", copy: "Define the experience, connect the pieces, and agree on what the first release needs to do. Ambition gets a practical plan.", output: "A scoped product blueprint" },
+  { title: "Make it real. Make it work.", copy: "Design and engineering move together. Review working software, test the important paths, and improve the details that people feel.", output: "A working, tested product" },
+  { title: "Launch. Learn. Keep building.", copy: "Put it in people's hands. Support and future improvements are agreed up front, so the next chapter has a clear owner.", output: "A launch and a plan for what follows" },
 ];
 
-const capabilities = [
-  ["01", "Custom software", "Internal tools, client portals, operational platforms, and products that fit the business instead of forcing the business to fit the software."],
-  ["02", "AI systems", "Useful AI woven into real workflows: reasoning, voice, data handling, content generation, and decision support where it actually earns its keep."],
-  ["03", "Connected operations", "Integrations and automation that remove repetitive work, connect fragmented systems, and make the whole operation feel like one product."],
+const questions = [
+  ["Do you only build for mortgage and real estate?", "No. Those are the industries behind our first two brands, not the boundaries of the studio. We start with the business problem, whether that means a new platform, a customer experience, or a better internal workflow."],
+  ["What if I have an idea, but not a technical plan?", "That's a good starting point. Discovery turns the idea into a clear problem, a proposed experience, and a realistic first-release scope. You don't need a technical specification to start a conversation."],
+  ["Can you work with the tools we already use?", "Yes, when the tools provide suitable integration access. We look at what should stay, what needs connecting, and what actually requires custom development before proposing a rebuild."],
+  ["How do pricing and timelines work?", "Custom projects are scoped around the work, not forced into a generic package. We define the deliverables, dependencies, budget, and timeline before the build. Our own products have separate plans on their respective websites."],
 ];
-
-const steps = [
-  ["Understand", "We get close to the problem, the people, and the current process before prescribing a solution."],
-  ["Architect", "We define the product, the workflow, and the smallest version worth putting in front of real users."],
-  ["Build", "We design and engineer the experience end to end, with speed without treating quality like an optional upgrade."],
-  ["Ship", "We launch, learn from usage, and keep improving what matters instead of protecting a stale first version."],
-];
-
-function Mark({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" aria-hidden="true" className={className}>
-      <defs>
-        <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#F6F8FB" />
-          <stop offset="0.5" stopColor="#B6C0CC" />
-          <stop offset="1" stopColor="#707B88" />
-        </linearGradient>
-        <linearGradient id="ice" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stopColor="#4AB8FF" />
-          <stop offset="1" stopColor="#A9EBFF" />
-        </linearGradient>
-      </defs>
-      <path d="M43 18h18l28 64H69L43 18Z" fill="url(#steel)" />
-      <path d="M11 82 43 18h18L29 82H11Z" fill="url(#ice)" />
-      <path d="M43 61h21l8 18H34l9-18Z" fill="url(#steel)" opacity=".94" />
-    </svg>
-  );
-}
 
 export default function Home() {
-  return (
-    <main className="site-shell">
-      <header className="nav-wrap">
-        <a className="brand-lockup" href="#top" aria-label="Automated Brands home">
-          <Mark className="brand-mark" />
-          <span className="brand-copy"><strong>AUTOMATED</strong><span>BRANDS</span></span>
-        </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#brands">Our Brands</a>
-          <a href="#build">What We Build</a>
-          <a href="#process">Process</a>
-          <a href="#about">About</a>
-        </nav>
-        <a className="nav-cta" href="mailto:hello@automatedbrands.com?subject=I%20have%20an%20idea">Let&apos;s Build</a>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-glow" aria-hidden="true" />
-        <div className="hero-copy">
-          <div className="eyebrow"><span /> SOFTWARE · AI · PRODUCTS</div>
-          <h1>You know that thing you wish existed?</h1>
-          <h2>We build it.</h2>
-          <p>
-            Automated Brands turns ambitious ideas and complicated business problems into software,
-            AI systems, and products people can actually use.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-button" href="mailto:hello@automatedbrands.com?subject=Tell%20us%20what%20you%27re%20thinking">Tell us what you&apos;re thinking <span>↗</span></a>
-            <a className="text-link" href="#brands">See what we&apos;ve built <span>↓</span></a>
+  return <>
+    <a href="#main-content" className="skip-link">Skip to content</a>
+    <Navigation />
+    <main id="main-content">
+      <section className="hero" id="top" aria-labelledby="hero-title">
+        <div className="hero-atmosphere" aria-hidden="true"><div className="horizon-line" /><div className="hero-orbit" /><div className="hero-orbit orbit-two" /></div>
+        <div className="container hero-inner">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="accent-line" />SOFTWARE. AI. A LITTLE WHAT IF.</p>
+            <h1 id="hero-title">Big ideas.<br /><span className="silver-text">Built.</span><span className="hero-period" aria-hidden="true" /></h1>
+            <p className="hero-lead">You know that thing you wish existed?<br /><strong>We build it.</strong></p>
+            <p className="hero-description">Ambitious software. Practical AI. Connected businesses. We turn what&apos;s possible into something people can actually use.</p>
+            <div className="hero-actions"><a href="#start" className="button button-silver">Bring us your idea <Arrow diagonal /></a><a href="#work" className="text-link">Explore the work <Arrow /></a></div>
+          </div>
+          <div className="hero-showcase" aria-label="Actual AutomatedRE product output and Event Beast mobile preview">
+            <div className="showcase-label mono"><span>FROM WHAT IF.</span><span>TO WHAT&apos;S NEXT.</span></div>
+            <div className="product-window hero-product"><div className="window-bar"><span className="window-dots"><i /><i /><i /></span><span>AutomatedRE / property experience</span><Arrow diagonal /></div><Image src="/work/property-website.webp" alt="Actual AutomatedRE property website output using fictional demonstration content" width={1440} height={1000} sizes="(max-width: 820px) 85vw, 48vw" preload className="hero-product-image" /></div>
+            <div className="hero-phone"><div className="phone-speaker" /><Image src="/work/event-beast-mobile.webp" alt="Event Beast's mobile-first event companion for Momentum Builder LIVE" width={780} height={1688} sizes="(max-width: 820px) 33vw, 17vw" preload /></div>
+            <div className="build-label"><span className="build-label-icon" aria-hidden="true"><Arrow diagonal /></span><div><strong>Ideas don&apos;t have to stay ideas.</strong><span>Designed. Engineered. Put to work.</span></div></div>
+            <p className="showcase-caption">Actual product screens · Sample property content<br />Event Beast preview · Built through Cuantico AI</p>
           </div>
         </div>
+        <div className="container hero-bottom"><span className="mono">OUR OWN BRANDS. YOUR NEXT BIG BUILD.</span><a href="#work" className="scroll-cue" aria-label="Scroll to selected work">DISCOVER <span>↓</span></a></div>
+      </section>
 
-        <div className="hero-art" aria-hidden="true">
-          <div className="orb orb-a" />
-          <div className="orb orb-b" />
-          <div className="mark-stage">
-            <div className="stage-line stage-line-one" />
-            <div className="stage-line stage-line-two" />
-            <Mark className="hero-mark" />
+      <div className="discipline-strip"><div className="container"><p>Different industries.<br /><strong>The same builder&apos;s instinct.</strong></p><span>SOFTWARE PRODUCTS</span><span>INTELLIGENT SYSTEMS</span><span>CONNECTED EXPERIENCES</span><span className="strip-symbol" aria-hidden="true">↗</span></div></div>
+
+      <section id="work" className="work-section section-pad" aria-labelledby="work-title">
+        <div className="container">
+          <div className="section-heading" data-reveal><div><p className="eyebrow"><span className="accent-line" />01 / THE WORK</p><h2 id="work-title">Less explaining.<br /><span>More showing.</span></h2></div><p>Our own brands and selected builds.<br />Different problems. Real things you can open, explore, and put to work.</p></div>
+          <article className="featured-work" data-reveal>
+            <a href="https://www.automatedre.com" target="_blank" rel="noopener noreferrer" className="re-showcase" aria-label="Explore AutomatedRE, opens in a new tab"><div className="re-art-label mono">ONE PROPERTY. EVERYTHING CONNECTED.</div><div className="re-browser product-window"><div className="window-bar"><span className="window-dots"><i /><i /><i /></span><span>The property experience</span><Arrow diagonal /></div><Image src="/work/property-website.webp" alt="AutomatedRE property page generated from fictional demonstration details" width={1440} height={1000} sizes="(max-width: 820px) 90vw, 52vw" /></div><div className="re-flyer"><Image src="/work/property-flyer.webp" alt="Matching branded listing flyer generated by AutomatedRE with fictional sample details" width={600} height={800} sizes="(max-width: 820px) 26vw, 15vw" /></div><span className="open-project" aria-hidden="true"><Arrow diagonal /></span></a>
+            <div className="featured-work-copy"><p className="project-category"><span className="small-dot" />AN AUTOMATED BRANDS COMPANY</p><h3>Automated<span className="re-blue">RE</span></h3><h4>One listing. <br />A complete experience.</h4><p>Property websites and branded marketing, connected to the same saved property. Built so the next listing doesn&apos;t mean starting over.</p><ul className="tags"><li>Software product</li><li>Real estate</li><li>Brand systems</li></ul><a className="text-link dark-link" href="https://www.automatedre.com" target="_blank" rel="noopener noreferrer">Explore AutomatedRE <Arrow diagonal /></a><small>Actual outputs. Fictional sample property and office.</small></div>
+          </article>
+          <div className="secondary-work-grid">
+            <article className="work-card" data-reveal><a href="https://event-beast.vercel.app" target="_blank" rel="noopener noreferrer" className="work-card-image event-image" aria-label="Explore the Event Beast preview, opens in a new tab"><Image src="/work/event-beast.webp" alt="Event Beast's desktop home with agenda, people, sponsors, and event information" width={1280} height={889} sizes="(max-width: 720px) 90vw, 44vw" /><span className="image-badge">IN DEVELOPMENT / LIVE PREVIEW</span><span className="open-project"><Arrow diagonal /></span></a><div className="work-card-copy"><p className="project-category">SELECTED BUILD / THROUGH CUANTICO AI</p><div className="work-card-title"><h3>Event Beast</h3><Arrow diagonal /></div><p>An event, in your pocket. Agenda, people, and conversations in a mobile-first companion for Momentum Builder LIVE.</p><ul className="tags"><li>Event technology</li><li>Mobile-first web app</li></ul></div></article>
+            <article className="work-card" data-reveal><a href="https://automatedlo.com" target="_blank" rel="noopener noreferrer" className="work-card-image lo-image" aria-label="Explore AutomatedLO, opens in a new tab"><Image src="/work/automatedlo.webp" alt="AutomatedLO's live training website and practical workflow blueprints" width={1280} height={889} sizes="(max-width: 720px) 90vw, 44vw" /><span className="image-badge">THE AUTOMATED BRANDS FAMILY</span><span className="open-project"><Arrow diagonal /></span></a><div className="work-card-copy"><p className="project-category">AN AUTOMATED BRANDS COMPANY</p><div className="work-card-title"><h3>AutomatedLO</h3><Arrow diagonal /></div><p>Automation from the inside out. Practical training, workflow blueprints, and AI resources for the way loan officers actually work.</p><ul className="tags"><li>Education & community</li><li>Mortgage workflows</li></ul></div></article>
           </div>
-          <div className="micro-tag tag-one">IDEA → SYSTEM</div>
-          <div className="micro-tag tag-two">BUILD / TEST / SHIP</div>
-        </div>
-
-        <div className="hero-foot">
-          <span>BIG IDEAS.</span>
-          <strong>BUILT.</strong>
+          <div id="brands" className="family-note"><span className="mono">THE AUTOMATED BRANDS FAMILY</span><p>AutomatedRE + AutomatedLO.<br /><strong>The first chapters. Not the boundaries.</strong></p><a href="#start" className="text-link dark-link">What&apos;s your next chapter? <Arrow diagonal /></a></div>
         </div>
       </section>
 
-      <section className="manifesto" id="about">
-        <div className="section-kicker">THE COMPANY BEHIND THE BUILD</div>
-        <div className="manifesto-grid">
-          <h3>Some ideas sound ambitious<br />until someone builds them.</h3>
-          <div className="manifesto-copy">
-            <p>
-              We create our own software brands and partner with businesses that have a valuable idea,
-              an expensive recurring problem, or a process their current tools cannot handle well.
-            </p>
-            <p>
-              The goal is not another impressive demo. It&apos;s something useful enough to change how the work gets done.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section id="build" className="build-section section-pad" aria-labelledby="build-title"><div className="container">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span className="accent-line" />02 / WHAT WE BUILD</p><h2 id="build-title">Your ambition.<br /><span className="muted-heading">Our kind of problem.</span></h2></div><p>Not another tool for the sake of it.<br />The right technology, built around what your business actually needs.</p></div>
+        <Capabilities />
+        <div className="principles" data-reveal><div><span className="mono">BUSINESS FIRST</span><h3>Understand before building.</h3><p>The problem chooses the technology. Not the other way around.</p></div><div><span className="mono">BUILT END TO END</span><h3>No gaps between the pieces.</h3><p>Product thinking, interface design, and engineering in the same conversation.</p></div><div><span className="mono">MADE TO BE USED</span><h3>Beyond the impressive demo.</h3><p>Real workflows. Thoughtful details. Something people can actually run.</p></div></div>
+      </div></section>
 
-      <section className="brands-section" id="brands">
-        <div className="section-heading-row">
-          <div>
-            <div className="section-kicker">OUR BRANDS</div>
-            <h3>Focused products.<br />One builder behind them.</h3>
-          </div>
-          <p>AutomatedLO and AutomatedRE are the first chapters. They are proof of how we think, not a boundary on where we go next.</p>
-        </div>
+      <section id="studio" className="studio-section section-pad" aria-labelledby="studio-title"><div className="container studio-grid">
+        <div className="studio-image" data-reveal><Image src="/work/jonathan.avif" alt="Jonathan Ferrell, founder of Automated Brands, in conversation" width={800} height={1000} sizes="(max-width: 820px) 90vw, 40vw" /><div className="portrait-caption"><span>JONATHAN FERRELL</span><span>FOUNDER / BUILDER</span></div></div>
+        <div className="studio-copy" data-reveal><p className="eyebrow"><span className="accent-line" />03 / THE STUDIO</p><h2 id="studio-title">The best ideas start with<br /><span className="silver-text">“there has to be a better way.”</span></h2><p>Automated Brands was founded by Jonathan Ferrell to turn that instinct into working products.</p><p>We build our own brands and partner with businesses that see an opportunity their current tools can&apos;t reach. The work can cross industries. The mindset stays the same: understand it, simplify it, build it properly.</p><div className="studio-signoff"><span>Ambitious by nature.<br /><strong>Practical by design.</strong></span><a href="https://jonathanferrell.com" target="_blank" rel="noopener noreferrer" className="text-link">Meet the founder <Arrow diagonal /></a></div></div>
+      </div></section>
 
-        <div className="brand-card-grid">
-          {brands.map((brand, index) => (
-            <a className="brand-card" href={brand.href} key={brand.name} target="_blank" rel="noreferrer">
-              <div className="brand-card-top">
-                <span>0{index + 1}</span>
-                <span>VIEW BRAND ↗</span>
-              </div>
-              <div className="brand-card-display">
-                <div className={`product-glyph glyph-${index + 1}`}>{index === 0 ? "LO" : "RE"}</div>
-                <div className="product-name">{brand.name}</div>
-              </div>
-              <div className="brand-card-bottom">
-                <div className="brand-eyebrow">{brand.eyebrow}</div>
-                <p>{brand.description}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      <section id="process" className="process-section section-pad" aria-labelledby="process-title"><div className="container process-layout"><div className="process-intro" data-reveal><p className="eyebrow"><span className="accent-line" />04 / FROM IDEA TO REALITY</p><h2 id="process-title">Big thinking.<br /><span>Clear next steps.</span></h2><p>You shouldn&apos;t need to understand the technology to understand what happens next.</p><a className="text-link dark-link" href="#start">Start the conversation <Arrow diagonal /></a></div><ol className="process-list">{process.map((step, index) => <li key={step.title} data-reveal><span className="process-number mono">0{index + 1}</span><div><h3>{step.title}</h3><p>{step.copy}</p><span className="process-output"><span aria-hidden="true">↳</span> {step.output}</span></div></li>)}</ol></div></section>
 
-      <section className="build-section" id="build">
-        <div className="section-kicker">WHAT WE BUILD</div>
-        <div className="build-intro">
-          <h3>When off-the-shelf<br />stops being enough.</h3>
-          <p>We build around the business problem first, then choose the technology that makes the answer possible.</p>
-        </div>
-        <div className="capability-list">
-          {capabilities.map(([num, title, copy]) => (
-            <article className="capability" key={num}>
-              <div className="cap-num">{num}</div>
-              <h4>{title}</h4>
-              <p>{copy}</p>
-              <div className="cap-arrow">↗</div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <section className="faq-section section-pad" aria-labelledby="faq-title"><div className="container faq-layout"><div data-reveal><p className="eyebrow"><span className="accent-line" />A FEW GOOD QUESTIONS</p><h2 id="faq-title">Before the<br /><span className="muted-heading">what if.</span></h2></div><div className="faq-list">{questions.map(([question, answer]) => <details key={question}><summary>{question}<span className="faq-plus" aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>
 
-      <section className="process-section" id="process">
-        <div className="process-head">
-          <div>
-            <div className="section-kicker">HOW WE WORK</div>
-            <h3>Move fast.<br />Build deliberately.</h3>
-          </div>
-          <p>Speed matters. So does building the right thing. Our process is designed to protect both.</p>
-        </div>
-        <div className="process-grid">
-          {steps.map(([title, copy], index) => (
-            <article key={title} className="process-card">
-              <div className="process-index">0{index + 1}</div>
-              <h4>{title}</h4>
-              <p>{copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="final-cta">
-        <div className="cta-noise" aria-hidden="true" />
-        <div className="section-kicker">THE NEXT BUILD</div>
-        <h3>What should exist in your business that doesn&apos;t yet?</h3>
-        <p>Bring us the idea, the bottleneck, or the impossible-sounding ask. We&apos;ll figure out what deserves to be built.</p>
-        <a className="primary-button light" href="mailto:hello@automatedbrands.com?subject=Let%27s%20build%20something">Let&apos;s build something <span>↗</span></a>
-      </section>
-
-      <footer>
-        <div className="footer-brand"><Mark className="footer-mark" /><span>AUTOMATED BRANDS</span></div>
-        <div className="footer-copy">Software. AI. Products. <strong>Big ideas. Built.</strong></div>
-        <div className="footer-meta">© 2026 Automated Brands</div>
-      </footer>
+      <section id="start" className="contact-section section-pad" aria-labelledby="contact-title"><div className="container contact-grid"><div className="contact-copy" data-reveal><p className="eyebrow"><span className="accent-line" />YOUR IDEA GOES HERE</p><h2 id="contact-title">What should <br />exist <span>next?</span></h2><p>The ambitious idea. The everyday bottleneck. The thing you keep saying someone should build.</p><p><strong>Let&apos;s start there.</strong></p><a href="mailto:jonathan@jonathanferrell.com" className="direct-contact"><span className="mono">PREFER A DIRECT CONVERSATION?</span><span>Email Jonathan <Arrow diagonal /></span></a></div><ProjectBrief /></div></section>
     </main>
-  );
+    <footer className="site-footer"><div className="container"><div className="footer-top"><a href="#top" aria-label="Automated Brands, back to top"><BrandLockup id="footer" /></a><p>Different industries.<br /><strong>The same drive to build something better.</strong></p><a className="back-top" href="#top" aria-label="Back to top">↑</a></div><div className="footer-statement" aria-hidden="true">BIG IDEAS. <span>BUILT.</span></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Automated Brands</span><nav aria-label="Our brands"><a href="https://www.automatedre.com" target="_blank" rel="noopener noreferrer">AutomatedRE <Arrow diagonal /></a><a href="https://automatedlo.com" target="_blank" rel="noopener noreferrer">AutomatedLO <Arrow diagonal /></a></nav><span>SOFTWARE. AI. PRODUCTS.</span></div></div></footer>
+    <Reveal />
+  </>;
 }
