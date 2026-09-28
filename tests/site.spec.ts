@@ -71,8 +71,10 @@ test("project brief validates input and prepares a real email without submitting
   await page.getByRole("link", { name: "Bring us your idea" }).click();
   await page.getByRole("button", { name: "Build my project brief" }).click();
   expect(await page.getByLabel("Your name", { exact: true }).evaluate((element: HTMLInputElement) => element.validity.valueMissing)).toBe(true);
-  await page.getByRole("radio", { name: "Better operations" }).check();
   await page.getByLabel("Your name", { exact: true }).fill("QA Test Person");
+  const option = page.getByRole("radio", { name: "Better operations" });
+  expect(await option.evaluate(element => element.getBoundingClientRect().height)).toBeGreaterThanOrEqual(40);
+  await option.check();
   await page.getByLabel(/Company or website/).fill("Example Company");
   await page.getByLabel("What should exist that doesn't yet?", { exact: true }).fill("Our team needs one place to connect orders, invoices, and customer updates.");
   const submissions: string[] = [];
