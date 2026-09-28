@@ -69,7 +69,7 @@ export default function Home() {
       </div></section>
 
       <section id="studio" className="studio-section section-pad" aria-labelledby="studio-title"><div className="container studio-grid">
-        <div className="studio-image" data-reveal><Image src="/work/jonathan.avif" alt="Jonathan Ferrell, founder of Automated Brands, in conversation" width={800} height={1000} sizes="(max-width: 820px) 90vw, 40vw" /><div className="portrait-caption"><span>JONATHAN FERRELL</span><span>FOUNDER / BUILDER</span></div></div>
+        <div className="studio-image" data-reveal><Image src="/work/jonathan.webp" alt="Jonathan Ferrell, founder of Automated Brands, in conversation" width={500} height={500} sizes="(max-width: 820px) 90vw, 40vw" /><div className="portrait-caption"><span>JONATHAN FERRELL</span><span>FOUNDER / BUILDER</span></div></div>
         <div className="studio-copy" data-reveal><p className="eyebrow"><span className="accent-line" />03 / THE STUDIO</p><h2 id="studio-title">The best ideas start with<br /><span className="silver-text">“there has to be a better way.”</span></h2><p>Automated Brands was founded by Jonathan Ferrell to turn that instinct into working products.</p><p>We build our own brands and partner with businesses that see an opportunity their current tools can&apos;t reach. The work can cross industries. The mindset stays the same: understand it, simplify it, build it properly.</p><div className="studio-signoff"><span>Ambitious by nature.<br /><strong>Practical by design.</strong></span><a href="https://jonathanferrell.com" target="_blank" rel="noopener noreferrer" className="text-link">Meet the founder <Arrow diagonal /></a></div></div>
       </div></section>
 

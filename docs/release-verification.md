@@ -13,7 +13,7 @@ Verified locally against the production build on 2026-09-28 UTC.
 | Automated accessibility | No violations in the configured WCAG A/AA axe checks on the page and brief-review state in all three projects |
 | Runtime page errors | None in browser smoke checks |
 
-Visually reviewed desktop/mobile opening, portfolio, capability explorer, founder section, and inquiry layout. Fixed contrast issues and responsive line-break spacing found during review. Tested anchor positioning beneath the sticky header, keyboard tabs, mobile-menu dismissal, no-JavaScript fallback, and reduced-motion behavior.
+Visually reviewed desktop/mobile opening, portfolio, capability explorer, founder section, and inquiry layout. Fixed contrast issues and responsive line-break spacing found during review. Tested anchor positioning beneath the sticky header, keyboard tabs, mobile-menu dismissal, no-JavaScript fallback, and reduced-motion behavior. The live WebKit pass identified a portrait-loading problem not reproduced locally; the source portrait was converted to WebP and its intrinsic dimensions corrected. Individual image checks now report exactly which image failed.
 
 This is automated testing plus visual review, not a claim of comprehensive accessibility certification or testing on physical mobile hardware.
 

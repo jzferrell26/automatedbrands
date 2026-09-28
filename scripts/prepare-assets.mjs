@@ -4,11 +4,12 @@ import sharp from 'sharp';
 
 await fs.mkdir('public/work', { recursive: true });
 await fs.mkdir('public/brand', { recursive: true });
+await fs.mkdir('artifacts/reference', { recursive: true });
 const assets = [
   ['https://www.automatedre.com/marketing/property-website-desktop.webp', 'public/work/property-website.webp'],
   ['https://www.automatedre.com/flyer-examples/v5/signature-listing-featured-property.webp', 'public/work/property-flyer.webp'],
   ['https://www.automatedre.com/brand/automatedre/horizontal.svg', 'public/brand/automatedre.svg'],
-  ['https://jonathanferrell.com/_app/immutable/assets/jonathan-candid-profile.Cba7_4Lc.avif', 'public/work/jonathan.avif'],
+  ['https://jonathanferrell.com/_app/immutable/assets/jonathan-candid-profile.Cba7_4Lc.avif', 'artifacts/reference/jonathan-original.avif'],
 ];
 for (const [url, destination] of assets) {
   const response = await fetch(url);
@@ -16,6 +17,7 @@ for (const [url, destination] of assets) {
   await fs.writeFile(destination, Buffer.from(await response.arrayBuffer()));
   console.log(destination);
 }
+await sharp('artifacts/reference/jonathan-original.avif').webp({ quality: 86 }).toFile('public/work/jonathan.webp');
 for (const name of ['automatedlo', 'event-beast']) {
   await sharp(`artifacts/reference/${name}.png`).resize({ width: 1280 }).webp({ quality: 86 }).toFile(`public/work/${name}.webp`);
 }

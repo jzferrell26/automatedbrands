@@ -9,7 +9,7 @@ Assets were inspected and captured from public first-party pages during the flag
 | `public/work/automatedlo.webp` | Screenshot of the public `https://automatedlo.com` homepage, resized to 1280px and compressed to WebP. |
 | `public/work/event-beast.webp` | Screenshot of the public `https://event-beast.vercel.app` desktop preview. This is work through Cuantico AI, with an in-development label. |
 | `public/work/event-beast-mobile.webp` | Public Event Beast preview at 390 × 844 CSS pixels / 2× resolution. No signed-in attendee or private messaging content. |
-| `public/work/jonathan.avif` | `https://jonathanferrell.com/_app/immutable/assets/jonathan-candid-profile.Cba7_4Lc.avif` — founder portrait already published on Jonathan's own site. |
+| `public/work/jonathan.webp` | `https://jonathanferrell.com/_app/immutable/assets/jonathan-candid-profile.Cba7_4Lc.avif` — founder portrait already published on Jonathan's own site, converted to WebP for reliable delivery across the tested browser engines. |
 | `public/brand/automatedre.svg` | `https://www.automatedre.com/brand/automatedre/horizontal.svg` — AutomatedRE's existing brand identity. |
 | `public/brand/mark.svg` | Site's own single-A vector, matching the React component. Used for browser icons. |
 

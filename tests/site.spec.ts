@@ -13,7 +13,15 @@ test("the complete homepage loads without runtime errors", async ({ page }) => {
     await page.locator(`#${id}`).scrollIntoViewIfNeeded();
     await expect(page.locator(`#${id}`)).toBeVisible();
   }
-  await expect.poll(() => page.locator("main img").evaluateAll(images => images.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  // Visit each lazy image when it becomes visible and identify individual
+  // loading failures instead of reporting one anonymous image-count failure.
+  for (const image of await page.locator("main img").all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate((i: HTMLImageElement) => i.complete && i.naturalWidth > 0), {
+      timeout: 15000,
+      message: `Image did not load: ${await image.getAttribute("alt")}`,
+    }).toBe(true);
+  }
   expect(errors).toEqual([]);
   const ids = await page.locator("svg linearGradient").evaluateAll(elements => elements.map(e => e.id));
   expect(new Set(ids).size).toBe(ids.length);
