@@ -11,7 +11,6 @@ try {
     ['before-desktop', 'https://automatedbrands.vercel.app', 'artifacts'],
     ['automatedre', 'https://www.automatedre.com', 'artifacts/reference'],
     ['automatedlo', 'https://automatedlo.com', 'artifacts/reference'],
-    ['event-beast', 'https://event-beast.vercel.app', 'artifacts/reference'],
   ]) {
     try {
       const response = await page.goto(url, { waitUntil: 'networkidle', timeout: 45000 });

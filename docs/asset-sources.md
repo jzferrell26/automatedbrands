@@ -13,12 +13,14 @@ Assets were inspected and captured from public first-party pages during the flag
 | `public/brand/automatedre.svg` | `https://www.automatedre.com/brand/automatedre/horizontal.svg` — AutomatedRE's existing brand identity. |
 | `public/brand/mark.svg` | Site's own single-A vector, matching the React component. Used for browser icons. |
 
-The source pages may change. Screenshots are a dated portfolio capture, not a live embedded view. Recheck visibility, permissions, attribution, and labels before refreshing.
+The source pages may change. Screenshots are dated captures, not live embedded views. Recheck visibility, permissions, attribution, and labels before refreshing.
+
+The parent-company revision uses only the AutomatedRE product outputs and AutomatedLO screenshot on its homepage. The prior Event Beast and founder portrait files remain historical unused assets; their presence on disk is not an ownership claim or approval to reintroduce a personal portfolio. The asset-refresh scripts now target only the brand family.
 
 ## Refresh process
 
 1. `node scripts/capture-reference.mjs` captures public desktop views and the current parent-site baseline into ignored artifact folders.
-2. `node scripts/prepare-assets.mjs` downloads the existing source outputs and creates optimized screenshot assets. Inspect its URLs before running, especially if the personal site has rebuilt its hashed asset filenames.
+2. `node scripts/prepare-assets.mjs` downloads the existing AutomatedRE outputs and creates the optimized AutomatedLO screenshot. Inspect source URLs and the captured image before running.
 3. `npm run brand:icons` refreshes the favicon and Apple touch icon from `public/brand/mark.svg`.
 4. Rebuild, run tests, and visually inspect desktop/mobile renders before publishing.
 

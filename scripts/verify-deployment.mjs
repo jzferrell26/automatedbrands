@@ -13,7 +13,13 @@ for (let attempt = 1; attempt <= 24; attempt++) {
     if (actual !== last || attempt % 4 === 0) console.log(JSON.stringify({ attempt, status: response.status, expected, actual }));
     last = actual;
     if (response.ok && actual === expected) {
-      if (!html.includes('Build my project brief') || !html.includes('Less explaining.')) throw new Error('Revision matches, but expected page content is missing.');
+      if (!html.includes('Distinct identities.') || !html.includes('Explore our brands') || html.includes('Build my project brief')) throw new Error('Revision matches, but expected parent-company content is missing.');
+      for (const path of ['/partners', '/partners/distribution', '/partners/opportunities', '/build-with-us']) {
+        const route = await fetch(`${origin}${path}`, { signal: AbortSignal.timeout(15000) });
+        if (!route.ok) throw new Error(`${path} returned ${route.status}`);
+        const routeHtml = await route.text();
+        if (!routeHtml.includes(`content="${expected}"`)) throw new Error(`${path} did not serve the expected revision`);
+      }
       const proof = { url: origin, expected, actual, status: response.status, checkedAt: new Date().toISOString() };
       await fs.mkdir('artifacts', { recursive: true });
       await fs.writeFile('artifacts/deployment-proof.json', JSON.stringify(proof, null, 2));

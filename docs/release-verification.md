@@ -1,5 +1,7 @@
 # Flagship redesign verification
 
+> Historical verification for the earlier software-studio presentation. The parent-company release replaces that site's hierarchy and test suite. See `parent-company-release.md` for the new release scope and verification.
+
 Verified locally against the production build on 2026-09-28 UTC.
 
 | Check | Result |

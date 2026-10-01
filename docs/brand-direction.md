@@ -1,16 +1,34 @@
-# Automated Brands — locked direction
+# Automated Brands — approved parent-company direction
 
-## Positioning
+## Company purpose
 
-A software and AI product company with its own brands and a selective custom-build practice. Mortgage and real estate are the first product verticals, not the boundary of the parent company.
+**We turn better ways of working into businesses.**
 
-Primary line: **Big ideas. Built.**
+Automated Brands is the parent company behind AutomatedRE and AutomatedLO. The initial industries are starting points, not limits. It builds around recurring problems, useful products, and distinct audiences—not a collection of unrelated client projects.
 
-Opening invitation: **You know that thing you wish existed? We build it.**
+Brand line: **Big ideas. Built.**
 
-Personality: ambitious, direct, curious, useful, and family-friendly. No swearing, inflated claims, pretend team size, or generic AI superlatives.
+Commercial hierarchy: **Owned brands first. Selected partnerships second. Custom projects third.**
 
-## Palette
+## Separate the websites' jobs
+
+- **JonathanFerrell.com:** trust in the founder, his leadership, speaking, personal perspective, and cross-company experience.
+- **Automated Brands:** trust in the company, the brands it is building, why they belong together, and specific company-level partnerships.
+- **Product websites:** product adoption, pricing, offers, customer support, and brand-specific partner terms.
+
+The founder supports the company story; he is not the homepage's entire proposition. Event Beast and other work through Cuantico AI are not part of this parent's owned-brand directory. Do not add them to fill a portfolio gap.
+
+## Homepage hierarchy
+
+1. Company conviction and purpose; primary action is **Explore our brands**.
+2. Two substantial brand stories with equal standing: audience, purpose, product, and destination.
+3. Operating approach: **Find the friction. Build the solution. Grow the business.**
+4. Compact company story and founder attribution, without the personal-site portrait treatment.
+5. Specific paths for **distribution partnerships** and **business opportunities**.
+
+Custom-build inquiries live on `/build-with-us`, not in the main hero or a homepage intake form. Avoid generic billable-service tabs, a repeated personal portfolio, empty newsrooms, and fake future subsidiaries.
+
+## Palette (unchanged)
 
 | Role | Color |
 | --- | --- |
@@ -23,18 +41,20 @@ Personality: ambitious, direct, curious, useful, and family-friendly. No swearin
 | Silver editorial surface | `#EDF1F4` |
 | Ink on silver | `#101820` |
 
-The parent uses blue as a highlight, not a wall-to-wall saturated brand fill. Silver editorial sections alternate with dark graphite to keep the long page readable. Screenshots of the independent products retain their real brand colors.
+Blue is a controlled accent, not a wall-to-wall fill. Individual brands retain their own identity inside their chapters. The parent doesn't inherit the visual identity of a specific vertical.
 
-## Mark
+## Mark (unchanged)
 
-Standalone A. Blue left stroke, silver right stroke, single lower interior stroke. No AB monogram and no extra upper interior wedge. The wordmark remains visible in the mobile navigation. Do not use the malformed Python logo preview as a reference.
+Standalone A. Blue left stroke, silver right stroke, one lower interior stroke. No AB monogram or extra upper interior wedge. Keep the wordmark visible on phones. The malformed Python logo preview is not a reference. Use the shared React component and source vector.
 
 ## Visual language
 
-Actual interfaces and generated product outputs are the proof. Browser/phone compositions use local optimized imagery and modest CSS perspective. Thin orbital lines and blue light give the parent visual character without WebGL, background video, persistent particle effects, or scroll hijacking.
+A typography-led company opening, disciplined editorial layout, distinct brand chapters, and a navigable company/brand footer. Product screenshots stay inside their brand sections instead of dominating the parent hero. No oversized founder portrait or decorative floating-logo scene.
 
-Motion is limited to short entry transitions, responsive hover details, and panel changes. Reduced-motion preferences are honored. Content is readable before hydration and without JavaScript.
+Modest blue light and fine geometric lines complement the identity without background video, WebGL, particle effects, or scroll hijacking. Motion is brief, optional, and disabled for reduced-motion preferences. Content is visible before hydration and without JavaScript.
 
-## Ownership and proof
+## Partnership and proof boundaries
 
-AutomatedRE + AutomatedLO are the family. Event Beast is a selected project through Cuantico AI and must keep that credit. Do not imply those are three parent-owned businesses. Do not turn illustrative workflows into purported live telemetry or simulated counters into business results.
+Distribution inquiries introduce relevant audiences or channels; they are not automatic affiliate enrollment. Business-opportunity inquiries explore a meaningful market problem and what each party could contribute; they are not a funding program, acquisition offer, or equity commitment. Custom projects are scoped separately.
+
+Use factual, family-friendly language. No invented team, track record, returns, customer endorsements, program terms, ownership claims, or guaranteed timelines. Display only actual products and clearly identify fictional sample content.

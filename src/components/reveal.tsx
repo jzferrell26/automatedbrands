@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /** Content is visible without JS. Only offscreen elements receive entrance motion. */
 export function Reveal() {
+  const pathname = usePathname();
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (media.matches) return;
@@ -23,6 +25,6 @@ export function Reveal() {
     const revealAll = () => { if (media.matches) elements.forEach(e => e.setAttribute("data-revealed", "true")); };
     media.addEventListener("change", revealAll);
     return () => { observer.disconnect(); media.removeEventListener("change", revealAll); elements.forEach(e => e.removeAttribute("data-revealed")); };
-  }, []);
+  }, [pathname]);
   return null;
 }
